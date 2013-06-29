@@ -2,8 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
-# Because most people know sql better
-gem 'sqlite3'
+gem 'pg'
 
 gem 'rspec-rails'
 
