@@ -28,4 +28,6 @@ gem 'jquery-rails'
 # gem 'unicorn'
 # gem 'capistrano'
 
-gem 'debugger'
+group :development do
+  gem 'debugger'
+end
