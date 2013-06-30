@@ -17,6 +17,6 @@ class Message < ActiveRecord::Base
     city          = params[:FromCity]
     state          = params[:FromState]
     zip          = params[:FromZip]
-    Message.create(content: content)
+    Message.create(content: content, city: city, state: state, zip: zip, to: to, from: from)
   end
 end
