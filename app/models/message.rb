@@ -26,7 +26,7 @@ class Message < ActiveRecord::Base
     Message.create(city: city, state: state, zip: zip, to: to, from: from, content: content, country: country)
   end
 
-  def sanitize_number(phone)
+  def self.sanitize_number(phone)
     number = phone.gsub('+','')
   end
 end
