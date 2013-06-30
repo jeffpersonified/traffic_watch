@@ -1,7 +1,6 @@
 class Message < ActiveRecord::Base
   attr_accessible :campaign_id, :content
   belongs_to :campaign
-
   # validates_presence_of :campaign_id, :content
 
   def self.process_sms(params)
