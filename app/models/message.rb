@@ -6,10 +6,13 @@ class Message < ActiveRecord::Base
   # validates_presence_of :campaign_id
 
   def self.process_sms(params)
-    puts "CALL RECEIVED @ Params: #{params}"
+    puts "CALL RECEIVED WITH PARAMS: #{params}"
 
-    from          = params[:From]
+    receiver = sanitize_number(params[:To])
+    # campaign = Campaign.find_by_number(receiver)
+
     to            = params[:To]
+    from          = params[:From]
     content       = params[:Body]
     # date_sent     = params[:From]
     # price         = params[:From]
@@ -19,6 +22,11 @@ class Message < ActiveRecord::Base
     zip           = params[:FromZip]
     country       = params[:FromCountry]
 
+    # Message.create(campaign_id: campaign.id, city: city, state: state, zip: zip, to: to, from: from, content: content, country: country)
     Message.create(city: city, state: state, zip: zip, to: to, from: from, content: content, country: country)
+  end
+
+  def sanitize_number(phone)
+    number = phone.gsub('+','')
   end
 end
