@@ -6,29 +6,17 @@ class Message < ActiveRecord::Base
 
   def self.process_sms(params)
     puts "CALL RECEIVED ------> Params: #{params}"
-    # from          = params[:From]
-    # to            = params[:To]
-    # body          = params[:From]
+
+# CALL RECEIVED ------> Params: {"AccountSid"=>"AC681c370b6a0881b2a46c946d3ba38e94", "Body"=>"Heyo!", "ToZip"=>"", "FromState"=>"MI", "ToCity"=>"", "SmsSid"=>"SM085adde77f31110f2ddac56d2c26359d", "ToState"=>"CA", "To"=>"+14155285688", "ToCountry"=>"US", "FromCountry"=>"US", "SmsMessageSid"=>"SM085adde77f31110f2ddac56d2c26359d", "ApiVersion"=>"2010-04-01", "FromCity"=>"GRAND RAPIDS", "SmsStatus"=>"received", "From"=>"+16166482327", "FromZip"=>"49504", "controller"=>"twilio", "action"=>"process_sms"}
+    from          = params[:From]
+    to            = params[:To]
+    content          = params[:Body]
     # date_sent     = params[:From]
     # price          = params[:From]
     # uri          = params[:From]
-    # city          = params[:From]
-    # state          = params[:From]
-    # zip          = params[:From]
-    content          = params[:body]
-
-
-    # t.string   "from"
-    # t.string   "to"
-    # t.string   "body"
-    # t.string   "date_sent"
-    # t.string   "price"
-    # t.string   "uri"
-    # t.string   "city"
-    # t.string   "state"
-    # t.string   "zip"
-    # t.string   "country"
-    # @state = params[:FromState]
+    city          = params[:FromCity]
+    state          = params[:FromState]
+    zip          = params[:FromZip]
     Message.create(content: content)
   end
 end
