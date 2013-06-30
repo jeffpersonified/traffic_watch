@@ -1,5 +1,10 @@
 TrafficWatch::Application.routes.draw do
+
+  root to: 'campaigns#index'
+
   match 'twilio/process_sms' => 'twilio#process_sms'
+
+  resources :campaigns
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

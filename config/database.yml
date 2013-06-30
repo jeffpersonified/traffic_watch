@@ -3,8 +3,7 @@ development:
   encoding: unicode
   database: traffic_watch_development
   pool: 5
-  username: traffic_watch
-  password:
+
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -29,13 +28,10 @@ test:
   encoding: unicode
   database: traffic_watch_test
   pool: 5
-  username: traffic_watch
-  password:
+
 
 production:
   adapter: postgresql
   encoding: unicode
   database: traffic_watch_production
   pool: 5
-  username: traffic_watch
-  password:

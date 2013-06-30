@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-
 gem 'pg'
-
 gem 'rspec-rails'
-
 gem 'twilio-ruby'
+gem "haml-rails"
+
+group :development do
+  gem 'debugger'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
@@ -27,6 +29,3 @@ gem 'jquery-rails'
 # gem 'unicorn'
 # gem 'capistrano'
 
-group :development do
-  gem 'debugger'
-end
