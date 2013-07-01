@@ -3,8 +3,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem 'pg'
 gem 'rspec-rails'
+
+gem 'haml-rails'
+gem 'simple_form'
+
 gem 'twilio-ruby'
-gem "haml-rails"
+gem 'countries'
+gem 'country_select'
 
 group :development do
   gem 'debugger'
